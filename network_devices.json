@@ -1,0 +1,34 @@
+{
+    "devices": [
+        {
+            "name": "Router1",
+            "ip": "192.168.1.1",
+            "mac": "00:1A:2B:3C:4D:5E",
+            "interface": "eth0"
+        },
+        {
+            "name": "Switch1",
+            "ip": "192.168.1.2",
+            "mac": "00:1A:2B:3C:4D:5F",
+            "interface": "eth1"
+        },
+        {
+            "name": "AccessPoint1",
+            "ip": "192.168.1.3",
+            "mac": "00:1A:2B:3C:4D:60",
+            "interface": "wlan0"
+        },
+        {
+            "name": "Firewall1",
+            "ip": "192.168.1.4",
+            "mac": "00:1A:2B:3C:4D:61",
+            "interface": "eth2"
+        },
+        {
+            "name": "Server1",
+            "ip": "192.168.1.5",
+            "mac": "00:1A:2B:3C:4D:62",
+            "interface": "eth3"
+        }
+    ]
+}
