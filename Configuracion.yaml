@@ -1,0 +1,31 @@
+---
+- name: Configuración de router Cisco
+  hosts: cisco_routers
+  gather_facts: no
+  connection: network_cli
+  tasks:
+    - name: Configurar la interfaz GigabitEthernet0/1
+      ios_config:
+        lines:
+          - interface GigabitEthernet0/1
+          - description Conexión a la red LAN
+          - ip address 192.168.1.1 255.255.255.0
+          - no shutdown
+
+    - name: Configurar la interfaz loopback
+      ios_config:
+        lines:
+          - interface Loopback0
+          - ip address 10.10.10.1 255.255.255.255
+          - description Interfaz Loopback
+
+    - name: Configurar el router OSPF
+      ios_config:
+        lines:
+          - router ospf 1
+          - network 192.168.1.0 0.0.0.255 area 0
+          - network 10.10.10.1 0.0.0.0 area 0
+
+    - name: Guardar la configuración
+      ios_config:
+        save_when: modified
